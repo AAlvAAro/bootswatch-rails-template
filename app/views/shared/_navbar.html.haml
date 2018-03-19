@@ -1,0 +1,28 @@
+%nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{ type: 'button', 'data-toggle': 'collapse',
+                                       'data-target': '#navbar', 'aria-expanded': false }
+        %span.sr-only Abrir menu de navegación
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+
+      = link_to 'App Name', root_path, class: 'navbar-brand light'
+
+    .collapse.navbar-collapse#navbar
+      %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          %li
+            = link_to destroy_user_session_path, class: 'light', method: :delete do
+              Salir
+              %i.fa.fa-sign-out
+        - else
+          %li
+            = link_to new_user_session_path, class: 'light' do
+              Ingresar
+              %i.fa.fa-sign-in
+          %li
+            = link_to  new_user_registration_path, class: 'light' do
+              Registro
+              %i.fa.fa-pencil-square-o

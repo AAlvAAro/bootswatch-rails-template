@@ -1,0 +1,13 @@
+es-MX:
+  activerecord:
+    attributes:
+      account:
+        rfc: RFC
+        name: Nombre de la cuenta
+        legal_name: Nombre fiscal
+        street: Calle y número
+        neighborhood: Colonia
+        zipcode: Código postal
+        city: Ciudad
+        state: Estado
+

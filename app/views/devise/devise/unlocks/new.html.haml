@@ -1,0 +1,16 @@
+%legend.center Reenviar instrucciones de desbloqueo
+
+.col-md-4.col-md-offset-4
+  = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+  = general_error_message(resource)
+
+  .well
+      %fielset.form-group
+        .col-md-12
+          = f.label :email
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: field_with_validation(resource, :email)
+          = field_error_message(resource, :email)
+        .col-md-12
+          %br
+          = f.submit "Reenviar instrucciones de desbloqueo", class: 'btn btn-success'
+      = render "devise/shared/links"
