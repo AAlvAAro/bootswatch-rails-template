@@ -99,7 +99,7 @@ insert_into_file 'app/assets/javascripts/application.js', after: '//= require tu
 end
 
 # Add custom application.scss file based on bootswatch v3
-bootswatch_template_name = ask "Which bootswatch v3 template do you want to use?"
+bootswatch_template_name = ask("Which bootswatch v3 template do you want to use?").downcase
 
 base_stylesheet = 'app/assets/stylesheets/application'
 remove_file base_stylesheet + '.css'
