@@ -5,7 +5,7 @@ set -e
 
 echo "Install dependencies"
 source ~/.rvm/scripts/rvm
-rvm use 2.4.1
+rvm use 2.5.1
 gem install bundler --conservative
 bundle check || bundle install
 
